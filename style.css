@@ -57,7 +57,6 @@ body {
 .underlineW:hover::after {
     width: 100%;
 }
-
 .underlineB::after {
     content: "";
     height: 1px;
@@ -68,30 +67,34 @@ body {
     background-color: var(--black);
     transition: ease-in 0.15s;
 }
-
 .underlineB:hover::after {
     width: 100%;
 }
-
 #contact-form select {
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #1a1818;
-    color: #1a1818;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
     font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
     padding: 10px 0;
     width: 100%;
+    flex: 1;
     outline: none;
+    cursor: pointer;
 }
-
 #contact-form select[multiple] {
-    height: 110px;
+    height: 120px;
 }
-
 #contact-form select option {
-    padding: 6px;
+    background-color: #1a1818;
+    color: #ffffff;
+    padding: 8px;
 }
-
+#contact-form .input-wrapper {
+    display: flex;
+    gap: 30px;
+}
 #circle {
     height: 14px;
     width: 14px;
