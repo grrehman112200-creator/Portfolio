@@ -407,7 +407,7 @@ const realContactForm = () => {
 
     // init EmailJS once
     if (window.emailjs) {
-        emailjs.init("YOUR_PUBLIC_KEY");
+        emailjs.init("DtNOv0q_LuKaHfRHn");
     } else {
         console.error("EmailJS SDK not loaded. Make sure the CDN script tag is added before script.js");
         return;
@@ -443,7 +443,7 @@ const realContactForm = () => {
             submitBtn.style.pointerEvents = "none";
         }
 
-        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", params)
+        emailjs.send("service_7o79r2l", "template_ugp6hic", params)
             .then(() => {
                 form.style.display = "none";
                 if (successMsg) {
