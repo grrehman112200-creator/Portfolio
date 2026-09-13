@@ -70,30 +70,57 @@ body {
 .underlineB:hover::after {
     width: 100%;
 }
-#contact-form select {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #ffffff;
+.form-options-wrap {
+    margin: 25px 0;
+}
+
+.form-options-wrap .paragraph.white {
     color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 14px;
     font-size: 16px;
-    padding: 10px 0;
-    width: 100%;
-    flex: 1;
-    outline: none;
-    cursor: pointer;
+    font-weight: 500;
 }
-#contact-form select[multiple] {
-    height: 120px;
-}
-#contact-form select option {
-    background-color: #1a1818;
-    color: #ffffff;
-    padding: 8px;
-}
-#contact-form .input-wrapper {
+
+.options-wrapper {
     display: flex;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.checkbox-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    padding: 10px 22px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* native checkbox/radio ko poori tarah chupa dena */
+.checkbox-field input[type="checkbox"],
+.checkbox-field input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    pointer-events: none;
+}
+
+.checkbox-field:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* checked hone per pura pill fill ho jaye */
+.checkbox-field:has(input:checked) {
+    background-color: #ffffff;
+    color: #1a1818;
+    font-weight: 600;
 }
 #circle {
     height: 14px;
