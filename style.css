@@ -93,12 +93,13 @@ body {
     align-items: center;
     border: 1px solid #ffffff;
     border-radius: 30px;
-    padding: 10px 22px;
+    padding: 15px 30px;
     cursor: pointer;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 18px;
     transition: all 0.3s ease;
     overflow: hidden;
+    font-family: 'Gilroy';
 }
 
 /* native checkbox/radio ko poori tarah chupa dena */
