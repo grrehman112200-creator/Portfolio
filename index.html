@@ -349,32 +349,70 @@
                 <div class="left">
                     <h3>Let's build something exceptional together.</h3>
                     <p>Available for freelance projects, long-term collaborations,<br>and remote opportunities worldwide.</p>
-                    <form id="contact-form">
-            <div class="input-wrapper">
-                <input name="Name" type="text" id="name" placeholder="Your name" autocomplete="off" required />
-                <input name="Email" type="email" id="email" placeholder="Your email" autocomplete="off" required />
-            </div>
-            <div class="input-wrapper">
-                <select name="Services" id="services" multiple required>
-                    <option value="WordPress Development">WordPress Development</option>
-                    <option value="Ecommerce (WooCommerce/Shopify)">Ecommerce (WooCommerce/Shopify)</option>
-                    <option value="UI/UX & Frontend">UI/UX & Frontend</option>
-                    <option value="Performance Optimization">Performance Optimization</option>
-                    <option value="SEO">SEO</option>
-                    <option value="Website Maintenance">Website Maintenance</option>
-                </select>
-                <select name="Budget" id="budget" required>
-                    <option value="" disabled selected>Select budget</option>
-                    <option value="$100 - $500">$100 - $500</option>
-                    <option value="$500 - $1,000">$500 - $1,000</option>
-                    <option value="$1,000 - $3,000">$1,000 - $3,000</option>
-                    <option value="$3,000 - $5,000">$3,000 - $5,000</option>
-                    <option value="$5,000+">$5,000+</option>
-                </select>
-            </div>
-            <textarea name="Message" id="message" rows="8" placeholder="Your message" required autocomplete="off"></textarea>
-            <button type="submit" id="submit-btn">Send Message</button>
-                </form>
+        <form id="contact-form">
+                <div class="input-wrapper">
+                    <input name="Name" type="text" id="name" placeholder="Your name" autocomplete="off" required />
+                    <input name="Email" type="email" id="email" placeholder="Your email" autocomplete="off" required />
+                </div>
+            
+                <div class="form-options-wrap">
+                    <p class="paragraph white">I am interested in</p>
+                    <div class="options-wrapper checkbox-group" id="services-group">
+                        <label class="checkbox-field">
+                            <input type="checkbox" name="Services" value="WordPress Development">
+                            <span>WordPress Development</span>
+                        </label>
+                        <label class="checkbox-field">
+                            <input type="checkbox" name="Services" value="Ecommerce (WooCommerce/Shopify)">
+                            <span>Ecommerce</span>
+                        </label>
+                        <label class="checkbox-field">
+                            <input type="checkbox" name="Services" value="UI/UX & Frontend">
+                            <span>UI/UX & Frontend</span>
+                        </label>
+                        <label class="checkbox-field">
+                            <input type="checkbox" name="Services" value="Performance Optimization">
+                            <span>Performance Optimization</span>
+                        </label>
+                        <label class="checkbox-field">
+                            <input type="checkbox" name="Services" value="SEO">
+                            <span>SEO</span>
+                        </label>
+                        <label class="checkbox-field">
+                            <input type="checkbox" name="Services" value="Website Maintenance">
+                            <span>Website Maintenance</span>
+                        </label>
+                    </div>
+                </div>
+            
+                <div class="form-options-wrap">
+                    <p class="paragraph white">My budget is</p>
+                    <div class="options-wrapper radio-group" id="budget-group">
+                        <label class="checkbox-field">
+                            <input type="radio" name="Budget" value="$100 - $500" required>
+                            <span>$100 - $500</span>
+                        </label>
+                        <label class="checkbox-field">
+                            <input type="radio" name="Budget" value="$500 - $1,000">
+                            <span>$500 - $1,000</span>
+                        </label>
+                        <label class="checkbox-field">
+                            <input type="radio" name="Budget" value="$1,000 - $3,000">
+                            <span>$1,000 - $3,000</span>
+                        </label>
+                        <label class="checkbox-field">
+                            <input type="radio" name="Budget" value="$3,000 - $5,000">
+                            <span>$3,000 - $5,000</span>
+                        </label>
+                        <label class="checkbox-field">
+                            <input type="radio" name="Budget" value="$5,000+">
+                            <span>$5,000+</span>
+                        </label>
+                    </div>
+                </div>
+                <textarea name="Message" id="message" rows="8" placeholder="Your message" required autocomplete="off"></textarea>
+                <button type="submit" id="submit-btn">Send Message</button>
+            </form>
                     <div id="submit-success" class="submit-res" style="display: none;">
                         <h2>Thank You! ❤️</h2>
                         <p>Your message has been sent successfully. I will get back to you shortly.</p>
