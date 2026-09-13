@@ -393,32 +393,75 @@ const mobMenu = () => {
 }
 mobMenu();
 
-// DUMMY CONTACT FORM HANDLER
+// EMAILJS CONTACT FORM HANDLER
+// NOTE: Replace YOUR_PUBLIC_KEY, YOUR_SERVICE_ID and YOUR_TEMPLATE_ID
+// with the values from your EmailJS dashboard before deploying.
 
-const dummyContactForm = () => {
+const realContactForm = () => {
     const form = document.querySelector("#contact-form");
     const successMsg = document.querySelector("#submit-success");
     const submitBtn = document.querySelector("#submit-btn");
+    const servicesSelect = document.querySelector("#services");
 
-    if (form) {
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            if (submitBtn) {
-                submitBtn.innerText = "Sending...";
-                submitBtn.style.opacity = "0.7";
-                submitBtn.style.pointerEvents = "none";
-            }
+    if (!form) return;
 
-            setTimeout(() => {
+    // init EmailJS once
+    if (window.emailjs) {
+        emailjs.init("YOUR_PUBLIC_KEY");
+    } else {
+        console.error("EmailJS SDK not loaded. Make sure the CDN script tag is added before script.js");
+        return;
+    }
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // pull selected values out of the multi-select safely
+        let selectedServices = "";
+        if (servicesSelect) {
+            selectedServices = Array.from(servicesSelect.selectedOptions)
+                .map(opt => opt.value)
+                .join(", ");
+        }
+
+        const budgetField = form.querySelector("[name='Budget']");
+        const nameField = form.querySelector("[name='Name']");
+        const emailField = form.querySelector("[name='Email']");
+        const messageField = form.querySelector("[name='Message']");
+
+        const params = {
+            Name: nameField ? nameField.value : "",
+            Email: emailField ? emailField.value : "",
+            Services: selectedServices,
+            Budget: budgetField ? budgetField.value : "",
+            Message: messageField ? messageField.value : ""
+        };
+
+        if (submitBtn) {
+            submitBtn.innerText = "Sending...";
+            submitBtn.style.opacity = "0.7";
+            submitBtn.style.pointerEvents = "none";
+        }
+
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", params)
+            .then(() => {
                 form.style.display = "none";
                 if (successMsg) {
                     successMsg.style.display = "flex";
                 }
-            }, 600);
-        });
-    }
+            })
+            .catch((error) => {
+                console.error("EmailJS error:", error);
+                if (submitBtn) {
+                    submitBtn.innerText = "Send Message";
+                    submitBtn.style.opacity = "1";
+                    submitBtn.style.pointerEvents = "auto";
+                }
+                alert("Message send nahi hui, dobara try karein.");
+            });
+    });
 };
-dummyContactForm();
+realContactForm();
 
 // CERTIFICATE LIGHTBOX MODAL HANDLER
 
@@ -461,4 +504,3 @@ const certModalHandler = () => {
     }
 };
 certModalHandler();
-
