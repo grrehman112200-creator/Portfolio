@@ -73,6 +73,25 @@ body {
     width: 100%;
 }
 
+#contact-form select {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #1a1818;
+    color: #1a1818;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 0;
+    width: 100%;
+    outline: none;
+}
+
+#contact-form select[multiple] {
+    height: 110px;
+}
+
+#contact-form select option {
+    padding: 6px;
+}
+
 #circle {
     height: 14px;
     width: 14px;
