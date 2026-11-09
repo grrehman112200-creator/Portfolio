@@ -786,6 +786,66 @@ nav img {
     gap: 2.2vw;
     width: 100%;
 }
+/* WhatsApp floating button */
+.wa-float {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 9990;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: #111;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 999px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: waIn 0.6s ease 4s forwards;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.wa-float i {
+    font-size: 22px;
+    color: #25D366;
+    transition: color 0.3s ease;
+}
+
+.wa-float:hover {
+    background: #fff;
+    color: #111;
+    transform: translateY(-3px);
+}
+
+.wa-float:hover i {
+    color: #111;
+}
+
+@keyframes waIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .wa-float {
+        right: 16px;
+        bottom: 16px;
+        padding: 12px;
+    }
+    .wa-float span {
+        display: none;
+    }
+}
 
 .bw-card {
     border-radius: 20px;
